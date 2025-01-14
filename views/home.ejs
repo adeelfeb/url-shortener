@@ -5,13 +5,94 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>URL Shortener</title>
     <link rel="stylesheet" href="styles.css"> <!-- Linking the external CSS file -->
+    <style>
+        body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: rgb(255, 211, 218);
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+form {
+    margin-top: 20px;
+}
+
+input[type="text"] {
+    width: 300px;
+    padding: 8px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 8px 15px;
+    background-color: #5c67f2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3f4aba;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.copy-icon {
+    cursor: pointer;
+    color: #555;
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+.copy-icon:hover {
+    color: #000;
+}
+
+table {
+    margin: 20px auto;
+    border-collapse: collapse;
+    width: 80%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+tr:hover {
+    background-color: #f9f9f9;
+}
+
+    </style>
 </head>
 <body>
     <h1>Welcome to the URL Shortener</h1>
     <% if (locals.id) { %>
         <p>URL Generated: 
-            <a href="http://localhost:8000/<%= id %>" target="_blank">http://localhost:8000/<%= id %></a>
-            <span class="copy-icon" onclick="copyToClipboard('http://localhost:8000/<%= id %>')">📋</span>
+            <a href="http://localhost:8000/api/<%= id %>" target="_blank">http://localhost:8000/api/<%= id %></a>
+            <span class="copy-icon" onclick="copyToClipboard('http://localhost:8000/api/<%= id %>')">📋</span>
         </p>
     <% } %>
     <div>

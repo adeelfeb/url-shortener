@@ -2,7 +2,7 @@ const Url = require("../models/url.model");
 // const { nanoid } = require("nanoid");
 const { nanoid } = require("nanoid"); // Use consistent syntax for CommonJS
 
-const handleGetUrl = async (req, res) => {
+const handlePostUrl = async (req, res) => {
   const body = req.body;
 
   // Validate input
@@ -18,11 +18,31 @@ const handleGetUrl = async (req, res) => {
       shortId: shortId,
       redirectUrl: body.url,
       visitHistory: [],
+      createdBy: req.user._id
     });
     const allUrls = await Url.find({})
-    console.log(`url being sent ${body.url}`)
+    
     // Send success response
     return res.render("home", {id: shortId, urls: allUrls })
+    
+  } catch (err) {
+    console.error("Error creating URL:", err.message);
+    return res.status(500).json({ error: "Internal server error" });
+  }
+};
+
+
+
+
+
+const handleGetUrl = async (req, res) => {
+  
+  
+
+  try {
+    const allUrls = await Url.find({})
+    
+    return res.render("home", {urls: allUrls })
     
   } catch (err) {
     console.error("Error creating URL:", err.message);
@@ -57,5 +77,6 @@ const handleGetAnalytics = async (req, res) => {
 
 module.exports = {
   handleGetUrl,
-  handleGetAnalytics
+  handleGetAnalytics,
+  handlePostUrl
 };
