@@ -56,10 +56,10 @@ const handleUserLogin = async(req, res)=>{
         }
 
         const allUrls = await Url.find({})
-        const sessionId = uuidv4()
-        setUser(sessionId, tempUser)
+        
+        const token = setUser(tempUser)
         // Redirect or render a success page (e.g., home)
-        res.cookie("uid", sessionId)
+        res.cookie("uid", token)
         return res.redirect("/");
     } catch (error) {
         console.error("Error during Login:", error);
