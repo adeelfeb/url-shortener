@@ -91,8 +91,8 @@ tr:hover {
     <h1>Welcome to the URL Shortener</h1>
     <% if (locals.id) { %>
         <p>URL Generated: 
-            <a href="http://localhost:8000/api/<%= id %>" target="_blank">http://localhost:8000/api/<%= id %></a>
-            <span class="copy-icon" onclick="copyToClipboard('http://localhost:8000/api/<%= id %>')">📋</span>
+            <a href="http://localhost:8000/short/<%= id %>" target="_blank">http://localhost:8000/short/<%= id %></a>
+            <span class="copy-icon" onclick="copyToClipboard('http://localhost:8000/short/<%= id %>')">📋</span>
         </p>
     <% } %>
     <div>

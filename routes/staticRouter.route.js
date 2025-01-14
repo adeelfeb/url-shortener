@@ -4,7 +4,8 @@ const Url= require("../models/url.model")
 const staticRouter = express.Router()
 
 staticRouter.get("/", async (req, res)=>{
-    const allUrls = await Url.find({})
+    if(!req.user) return res.redirect("/login")
+    const allUrls = await Url.find({createdBy: req.user._id})
 
     return res.render("home", {
         urls: allUrls

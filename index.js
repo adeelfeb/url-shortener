@@ -9,7 +9,7 @@ const userRouter = require("./routes/user.route")
 const app = express();
 const PORT = 8000;
 const cookieParser = require("cookie-parser")
-const {restrictToLoginUserOnly}  = require("./middleware/auth")
+const {restrictToLoginUserOnly, checkAuthOnly}  = require("./middleware/auth")
 
 
 
@@ -32,7 +32,7 @@ app.set("views", path.resolve("./views"));
 // Routes
 app.use("/api/url", restrictToLoginUserOnly, urlRouter);
 app.use("/api/user", userRouter)
-app.use("/", staticRouter)
+app.use("/", checkAuthOnly,staticRouter)
 
 // Handle GET request for shortId
 app.get("/short/:shortId", async (req, res) => {
