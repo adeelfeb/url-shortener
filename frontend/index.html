@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>URL Shortener - MERN Stack Project</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <h1>🚀 URL Shortener 🌐</h1>
+    <p>Your one-stop solution to creating shorter, shareable links! ✂️🔗</p>
+  </header>
+  
+  <div class="main-content">
+    <section class="shortener">
+      <h2>Shorten Your URL 📝</h2>
+      <form id="urlForm" class="shortener-form">
+        <input type="url" id="urlInput" placeholder="Enter a long URL here..." required>
+        <button type="submit" class="shorten-btn">Shorten ✂️</button>
+      </form>
+      <div id="result" class="hidden result-container">
+        <p>✅ New URL:</p>
+        <a id="shortUrl" href="#" target="_blank"></a>
+        <p>Shortened ID: <span id="shortenedId"></span></p>
+        
+      </div>
+    </section>
+    
+    <section class="analytics-fetcher">
+      <h2>Fetch URL Analytics 📊</h2>
+      <form id="analyticsForm" class="analytics-form">
+        <input type="text" id="shortIdInput" placeholder="Enter the Short ID (e.g., V8ENs3Bi)" required>
+        <button type="submit">Fetch Analytics 🔍</button>
+      </form>
+      <div id="analyticsResult" class="hidden">
+        <h3>URL Analytics for Short ID: <span id="fetchedShortId"></span></h3>
+        <p>Total Clicks: <span id="fetchedTotalClicks">0</span></p>
+        <ul id="fetchedClickDetails"></ul>
+      </div>
+    </section>
+  </div>
+
+  <section class="about">
+    <h2>About This Project 🛠️</h2>
+    <p>
+      This URL Shortener project is a personal learning exercise to dive deep into the MERN (MongoDB, Express, React, Node.js) stack.
+      Inspired by popular tools like <strong>Bitly</strong>, this app lets you shorten lengthy URLs with ease. 📏✨
+    </p>
+    <p>
+      <strong>Features:</strong>
+      <ul>
+        <li>🔗 Generate short URLs instantly</li>
+        <li>📜 Keep track of redirections</li>
+        <li>🛠️ Built with love and JavaScript!</li>
+      </ul>
+    </p>
+    <p>This is not a production-level app but a project for personal understanding. 🌱</p>
+  </section>
+  
+  <footer class="footer">
+    <h2>Built with ❤️ using MERN Stack</h2>
+    <div class="tech-icons">
+      <img src="https://cdn.worldvectorlogo.com/logos/mongodb-icon-1.svg" alt="MongoDB Logo" title="MongoDB" />
+      <img src="https://cdn.worldvectorlogo.com/logos/express-109.svg" alt="Express Logo" title="Express" />
+      <img src="https://cdn.worldvectorlogo.com/logos/react-2.svg" alt="React Logo" title="React" />
+      <img src="https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg" alt="Node.js Logo" title="Node.js" />
+    </div>
+    <p>
+      🌟 Follow me for more fun projects! Happy coding! 👨‍💻✨
+    </p>
+  </footer>
+  
+  <script src="script.js"></script>
+</body>
+</html>

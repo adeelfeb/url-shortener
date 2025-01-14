@@ -1,0 +1,22 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "A Node.js project that explains the basic concepts and setups. You can use it as a reference for your Node.js projects:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "mongoose": "^8.9.4",
+    "nanoid": "^5.0.9",
+    "nodemon": "^3.1.9",
+    "url": "^0.11.4"
+  }
+}

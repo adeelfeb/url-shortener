@@ -1,0 +1,221 @@
+/* General Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+header {
+  text-align: center;
+  background-color: #007bff;
+  color: white;
+  padding: 40px 20px;
+  border-bottom: 5px solid #0056b3;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  animation: fadeIn 1s ease-in-out;
+}
+
+header p {
+  margin: 10px 0;
+  font-size: 1.2rem;
+  color: #f1f1f1;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Animation for Fade-In */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Main Content Styling */
+.main-content {
+  display: flex;
+  justify-content: space-evenly;
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px 0;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.shortener, .analytics-fetcher {
+  width: 48%;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.shortener:hover, .analytics-fetcher:hover {
+  transform: translateY(-10px);
+}
+
+.shortener-form input, .analytics-form input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: border 0.3s ease;
+}
+
+.shortener-form input:focus, .analytics-form input:focus {
+  border-color: #007bff;
+}
+
+.shortener-form button, .analytics-form button {
+  padding: 10px 20px;
+  background-color: #28a745;
+  margin: 10px;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.shortener-form button:hover, .analytics-form button:hover {
+  background-color: #218838;
+  
+}
+
+/* Floating Effects for the Result Section */
+.result-container {
+  margin-top: 1rem;
+  animation: floatUp 1s ease-out;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Footer Styling */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 40px;
+  width: 100%;
+  border-top: 5px solid #0056b3;
+  position: relative;
+}
+
+footer .tech-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+footer .tech-icons img {
+  width: 40px;
+  transition: transform 0.3s ease;
+}
+
+footer .tech-icons img:hover {
+  transform: scale(1.2);
+}
+
+footer p {
+  margin-top: 10px;
+}
+
+/* About Section Styling */
+.about {
+  padding: 20px;
+  text-align: center;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  width: 90%;
+  max-width: 800px;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.about ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.about ul li {
+  margin: 5px 0;
+}
+
+/* Analytics Section Styling */
+.analytics-fetcher {
+  margin-top: 2rem;
+  text-align: center;
+  width: 90%;
+  max-width: 800px;
+}
+
+.analytics-form input {
+  padding: 0.5rem;
+  width: 250px;
+  margin-right: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.analytics-form button {
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.analytics-form button:hover {
+  background-color: #0056b3;
+}
+
+#analyticsResult {
+  margin-top: 1.5rem;
+  text-align: left;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  display: inline-block;
+  animation: fadeIn 1.5s ease-in-out;
+}
